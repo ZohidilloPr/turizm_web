@@ -1,0 +1,25 @@
+@mixin box-shadow($w,$color){
+    box-shadow: 3px 1px $w $color;
+}
+@mixin bg-img($url) {
+    background-size: cover !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    background-image: url($url) !important;
+}
+@mixin bg-img_linear($color_rgb, $alha, $url) {
+    background-size: cover !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    background: linear-gradient(rgba($color_rgb, $color_rgb, $color_rgb, $alha), rgba($color_rgb, $color_rgb, $color_rgb, $alha)), url($url);
+}
+@mixin bg-img-settings() {
+    background-size: cover !important;
+    background-repeat: repeat !important;
+    // background-color: #03396C !important;
+    background-position: center !important;
+}
+@mixin container($w) {
+    width: $w;
+    margin: auto;
+}

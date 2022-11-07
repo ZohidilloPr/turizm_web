@@ -1,0 +1,1036 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
+  list-style-type: none !important;
+  text-decoration: none !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.slick-arrow {
+  border-radius: 100px;
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0px -15px !important;
+  background-color: #03396C !important;
+}
+
+.a-hover-scrool, .scrol-fixed .nav-in .contact #phone-icon svg:hover, .scrol-fixed .nav-in .lang a:hover, .scrol-fixed .nav-in .lang main section .all button:hover, main section .all .scrol-fixed .nav-in .lang button:hover, .scrol-fixed .nav-in .brand span a:hover, .scrol-fixed .nav-in .brand span main section .all button:hover, main section .all .scrol-fixed .nav-in .brand span button:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+.scrol-fixed {
+  top: 0;
+  position: fixed;
+  background-color: #03396C;
+}
+.scrol-fixed .nav-in .brand span a, .scrol-fixed .nav-in .brand span main section .all button, main section .all .scrol-fixed .nav-in .brand span button {
+  color: #fff;
+}
+.scrol-fixed .nav-in .navigate ul li a, .scrol-fixed .nav-in .navigate ul li main section .all button, main section .all .scrol-fixed .nav-in .navigate ul li button {
+  color: #fff;
+}
+.scrol-fixed .nav-in .navigate ul li a:hover, .scrol-fixed .nav-in .navigate ul li main section .all button:hover, main section .all .scrol-fixed .nav-in .navigate ul li button:hover {
+  text-decoration: underline;
+}
+.scrol-fixed .nav-in .navigate ul li a ol li a, .scrol-fixed .nav-in .navigate ul li main section .all button ol li a, main section .all .scrol-fixed .nav-in .navigate ul li button ol li a, .scrol-fixed .nav-in .navigate ul li a ol li main section .all button, main section .all .scrol-fixed .nav-in .navigate ul li a ol li button, .scrol-fixed .nav-in .navigate ul li main section .all button ol li button, main section .all .scrol-fixed .nav-in .navigate ul li button ol li button {
+  color: #010C17;
+}
+.scrol-fixed .nav-in .navigate ul li a ol li a:hover, .scrol-fixed .nav-in .navigate ul li main section .all button ol li a:hover, main section .all .scrol-fixed .nav-in .navigate ul li button ol li a:hover, .scrol-fixed .nav-in .navigate ul li a ol li main section .all button:hover, main section .all .scrol-fixed .nav-in .navigate ul li a ol li button:hover, .scrol-fixed .nav-in .navigate ul li main section .all button ol li button:hover, main section .all .scrol-fixed .nav-in .navigate ul li button ol li button:hover {
+  color: #010C17 !important;
+}
+.scrol-fixed .nav-in .lang a, .scrol-fixed .nav-in .lang main section .all button, main section .all .scrol-fixed .nav-in .lang button {
+  color: #fff;
+}
+.scrol-fixed .nav-in .contact #phone-icon svg {
+  color: #fff;
+}
+.scrol-fixed .nav-in .contact #phone-number {
+  color: #fff;
+}
+
+.a-hover, nav .nav-in .lang a:hover, nav .nav-in .lang main section .all button:hover, main section .all nav .nav-in .lang button:hover, nav .nav-in .navigate ul li a:hover, nav .nav-in .navigate ul li main section .all button:hover, main section .all nav .nav-in .navigate ul li button:hover, nav .nav-in .brand span a:hover, nav .nav-in .brand span main section .all button:hover, main section .all nav .nav-in .brand span button:hover {
+  text-decoration: underline !important;
+}
+
+html {
+  scrollbar-width: thin;
+  transition: 1s all ease-in-out;
+  scrollbar-color: #03396C #fff;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #03396C;
+  border-radius: 10px;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0566C1;
+}
+
+.to-top {
+  right: 25px;
+  bottom: 40px;
+  position: fixed;
+  font-size: 22px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.to-top:hover {
+  opacity: 1;
+  bottom: 32px;
+  pointer-events: auto;
+}
+
+.marquee span {
+  color: brown;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  z-index: 9980;
+  padding: 30px 0;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+nav .nav-in {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+}
+nav .nav-in .brand span a, nav .nav-in .brand span main section .all button, main section .all nav .nav-in .brand span button {
+  color: white;
+  transition: 1s;
+}
+nav .nav-in .navigate ul {
+  display: inline-block;
+  line-height: 0.5px;
+}
+nav .nav-in .navigate ul li {
+  position: relative;
+  list-style-type: none;
+}
+nav .nav-in .navigate ul li a, nav .nav-in .navigate ul li main section .all button, main section .all nav .nav-in .navigate ul li button {
+  color: white;
+}
+nav .nav-in .navigate ul li ol {
+  width: 200px;
+  padding: 15px;
+  display: none;
+  margin-top: 25px;
+  line-height: 25px;
+  position: absolute;
+  background-color: white;
+}
+nav .nav-in .navigate ul li ol li a, nav .nav-in .navigate ul li ol li main section .all button, main section .all nav .nav-in .navigate ul li ol li button {
+  color: #010C17 !important;
+}
+nav .nav-in .navigate ul li ol li a:hover, nav .nav-in .navigate ul li ol li main section .all button:hover, main section .all nav .nav-in .navigate ul li ol li button:hover {
+  color: #010C17 !important;
+  text-decoration: underline !important;
+}
+nav .nav-in .lang a, nav .nav-in .lang main section .all button, main section .all nav .nav-in .lang button {
+  color: white;
+  transition: 1s;
+}
+nav .nav-in .lang a:hover, nav .nav-in .lang main section .all button:hover, main section .all nav .nav-in .lang button:hover {
+  text-decoration: underline !important;
+}
+nav .nav-in .contact {
+  margin-top: -10px;
+}
+nav .nav-in .contact #phone-icon svg {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+nav .nav-in .contact #phone-number {
+  color: #fff;
+  font-size: 28px;
+}
+
+header {
+  height: 100vh;
+}
+header #myCarousel .carousel-inner .carousel-item {
+  height: 100vh;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+}
+header #myCarousel .carousel-inner .carousel-item .header-text {
+  left: 5%;
+  top: 62%;
+  width: 70%;
+  z-index: 8888;
+  color: white;
+  position: relative;
+}
+header #myCarousel .carousel-inner .carousel-item .header-text .title h2 {
+  font-size: 45px;
+  font-weight: 800;
+}
+header #myCarousel .carousel-inner .carousel-item .header-text .title p {
+  font-weight: 600;
+  font-size: 20px;
+}
+header #myCarousel .carousel-inner .carousel-item .header-text .title a, header #myCarousel .carousel-inner .carousel-item .header-text .title main section .all button, main section .all header #myCarousel .carousel-inner .carousel-item .header-text .title button {
+  color: white;
+  transition: 1s;
+  padding: 10px 30px;
+  background-color: #03396C;
+}
+header #myCarousel .carousel-inner .carousel-item .header-text .title a:hover, header #myCarousel .carousel-inner .carousel-item .header-text .title main section .all button:hover, main section .all header #myCarousel .carousel-inner .carousel-item .header-text .title button:hover {
+  background-color: #0566C1;
+}
+
+main {
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+main section {
+  padding-bottom: 50px;
+  width: 90%;
+  margin: auto;
+  transition: 1s all ease-in-out;
+}
+main section h2 {
+  color: #010C17;
+  font-weight: 700;
+}
+main section .all {
+  text-align: right;
+}
+main section .all a, main section .all button {
+  color: #fff;
+  padding: 8px 25px;
+  background: #03396C;
+  border: 1px solid #03396C;
+}
+main #news {
+  padding: 50px 0;
+}
+main #news #news-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+main #news #news-row .news-colum {
+  overflow: hidden;
+  margin: 20px 30px;
+  position: relative;
+  border-radius: 10px;
+  width: 440px !important;
+  transition: 1s ease-in-out;
+  box-shadow: 3px 1px 15px #0566C1;
+}
+main #news #news-row .news-colum:hover, main #news #news-row .news-colum:focus {
+  box-shadow: 3px 1px 50px #03396C;
+}
+main #news #news-row .news-colum:hover .news-card, main #news #news-row .news-colum:focus .news-card {
+  transform: scale(1.3);
+}
+main #news #news-row .news-colum .news-card {
+  height: 300px;
+  transition: 0.5s;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main #news #news-row .news-colum .news-title {
+  top: 59%;
+  width: 100%;
+  z-index: 8888;
+  padding: 10px;
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.6);
+}
+main #news #news-row .news-colum .news-title span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+}
+main #news #news-row .news-colum .news-title a, main #news #news-row .news-colum .news-title section .all button, main section .all #news #news-row .news-colum .news-title button {
+  width: 30%;
+  display: block;
+  color: #fff;
+  margin-top: 5px;
+  padding: 5px 18px;
+  background-color: #03396C;
+  border: 1px solid #03396C;
+  transition: 1s ease-in-out;
+}
+main #news #news-row .news-colum .news-title a:hover, main #news #news-row .news-colum .news-title section .all button:hover, main section .all #news #news-row .news-colum .news-title button:hover {
+  background-color: #0566C1;
+}
+main #hududlar #areas {
+  width: 100%;
+  display: grid;
+  cursor: context-menu;
+  grid-template-columns: auto auto auto;
+}
+main #hududlar #areas .area-colum {
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 20px 10px;
+  position: relative;
+  border-radius: 10px;
+  width: 440px !important;
+  box-shadow: 3px 1px 20px #03396C;
+}
+main #hududlar #areas .area-colum:hover .area-card {
+  transform: scale(1.5);
+}
+main #hududlar #areas .area-colum:hover .area-title {
+  opacity: 0;
+}
+main #hududlar #areas .area-colum:hover .more_read {
+  transform: scale(1);
+}
+main #hududlar #areas .area-colum .area-card {
+  height: 270px;
+  transition: 0.7s;
+  border-radius: 7px;
+  background-color: #03396C;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+}
+main #hududlar #areas .area-colum .area-title {
+  top: 68%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+main #hududlar #areas .area-colum .area-title span {
+  font-size: 20px;
+  font-weight: 700;
+}
+main #hududlar #areas .area-colum .area-title span a, main #hududlar #areas .area-colum .area-title span section .all button, main section .all #hududlar #areas .area-colum .area-title span button {
+  color: #fff;
+}
+main #hududlar #areas .area-colum .area-title p {
+  color: #fff;
+}
+main #hududlar #areas .area-colum .more_read {
+  top: 43%;
+  left: 35%;
+  width: 30%;
+  color: #fff;
+  transition: 1s;
+  padding: 8px 20px;
+  text-align: center;
+  position: absolute;
+  transform: scale(0);
+  background-color: #03396C;
+  border: 1px solid #03396C;
+}
+main #photo-galary .images-grid ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+main #photo-galary .images-grid ul::after {
+  content: " ";
+  flex-basis: auto;
+}
+main #photo-galary .images-grid ul li {
+  flex: 25%;
+  height: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  flex-basis: auto;
+  position: relative;
+}
+main #photo-galary .images-grid ul li:hover .overlay-text-image {
+  transform: scale(1);
+}
+main #photo-galary .images-grid ul li:hover img {
+  transform: scale(1.6);
+}
+main #photo-galary .images-grid ul li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+  transition: 1s all ease-in-out;
+}
+main #photo-galary .images-grid ul li .overlay-text-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #fff;
+  position: absolute;
+  transform: scale(0);
+  align-items: center;
+  justify-content: center;
+  transition: 1s all ease-in-out;
+  background: rgba(57, 57, 57, 0.502);
+}
+main #photo-galary #images-modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+main #photo-galary #images-modal .images-content {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+}
+main #photo-galary #images-modal .images-content .fotorama img {
+  height: 300px;
+}
+main #photo-galary #images-modal .images-content #close {
+  top: 3%;
+  left: 95%;
+  position: absolute;
+}
+main #places #places_card {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+main #places #places_card .places-collum {
+  overflow: hidden;
+  margin: 20px 10px;
+  position: relative;
+  border-radius: 10px;
+  width: 440px !important;
+  background-color: #fff;
+  transition: 0.45s ease-in-out;
+  box-shadow: 3px 1px 10px #03396C;
+}
+main #places #places_card .places-collum:hover .places-card {
+  transform: scale(1.4);
+}
+main #places #places_card .places-collum:hover .places-title {
+  opacity: 0;
+}
+main #places #places_card .places-collum:hover .more_read {
+  transform: scale(1);
+}
+main #places #places_card .places-collum .places-card {
+  height: 300px;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  transition: 0.8s ease-in-out;
+}
+main #places #places_card .places-collum .places-title {
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  transition: 1s all ease-in-out;
+}
+main #places #places_card .places-collum .places-title span a, main #places #places_card .places-collum .places-title span section .all button, main section .all #places #places_card .places-collum .places-title span button {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+}
+main #places #places_card .places-collum .more_read {
+  top: 43%;
+  left: 35%;
+  width: 30%;
+  color: #fff;
+  padding: 8px 20px;
+  text-align: center;
+  position: absolute;
+  transform: scale(0);
+  background-color: #03396C;
+  border: 1px solid #03396C;
+  transition: 0.5s all ease-in-out;
+}
+main #questions {
+  display: none;
+}
+main #questions #poll {
+  display: flex;
+}
+main #questions #poll .poll-card {
+  margin: 20px 10px;
+  padding: 20px 10px;
+  background: #fff;
+  border: 1px solid #03396C;
+  transition: 0.5s;
+  box-shadow: 3px 1px 10px #03396C;
+}
+main #questions #poll .poll-card:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 1px 20px #0566C1;
+}
+main #questions #poll .poll-card .num_ans {
+  font-weight: 800;
+}
+main #questions #poll .poll-card hr {
+  opacity: 1;
+  margin: 5px 0;
+  color: #03396C;
+  border-width: 3px;
+}
+main #questions #poll .poll-card .poll-title {
+  padding: 5px 0;
+  line-height: 1.2;
+  text-align: justify;
+}
+main #questions #poll .poll-card .poll-answer form .vote {
+  color: #fff;
+  display: block;
+  padding: 3px 20px;
+  margin: 10px 0;
+  background-color: #03396C;
+  border: 1px solid #03396C;
+}
+main #questions #poll .poll-card .poll-answer div span {
+  display: block;
+}
+main #menu-places #menu-box {
+  display: flex;
+  height: 500px;
+}
+main #menu-places #menu-box .box {
+  flex: 20%;
+  position: relative;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  transition: 1s all ease-in-out;
+}
+main #menu-places #menu-box .box:hover {
+  flex: 60%;
+}
+main #menu-places #menu-box .box:hover span {
+  transform: scale(1);
+}
+main #menu-places #menu-box .box span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transform: scale(0);
+  align-items: center;
+  justify-content: center;
+  transition: 1s all ease-in-out;
+  background-color: rgba(50, 50, 50, 0.6);
+}
+main #menu-places #menu-box .box span a, main #menu-places #menu-box .box span section .all button, main section .all #menu-places #menu-box .box span button {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+main #video-galary .albom {
+  margin: 30px 0;
+  text-align: center;
+}
+main #video-galary .albom .video {
+  width: 96%;
+  padding: 0 20px;
+}
+main #video-galary .albom .video video {
+  height: 550px;
+}
+
+.albom #photo-galary .images-grid ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.albom #photo-galary .images-grid ul::after {
+  content: " ";
+  flex-basis: auto;
+}
+.albom #photo-galary .images-grid ul li {
+  flex: 25%;
+  height: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  flex-basis: auto;
+  position: relative;
+}
+.albom #photo-galary .images-grid ul li:hover .overlay-text-image {
+  transform: scale(1);
+}
+.albom #photo-galary .images-grid ul li:hover img {
+  transform: scale(1.6);
+}
+.albom #photo-galary .images-grid ul li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+  transition: 1s all ease-in-out;
+}
+.albom #photo-galary .images-grid ul li .overlay-text-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #fff;
+  position: absolute;
+  transform: scale(0);
+  align-items: center;
+  justify-content: center;
+  transition: 1s all ease-in-out;
+  background: rgba(57, 57, 57, 0.502);
+}
+
+#slidefixed {
+  top: 50%;
+  width: 100px;
+  left: -10.56%;
+  z-index: 9999;
+  position: fixed;
+  transition: 1s all ease-in-out;
+}
+#slidefixed:hover {
+  left: -5%;
+}
+
+#images-modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+#images-modal .images-content {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+}
+#images-modal .images-content .fotorama img {
+  height: 300px;
+}
+#images-modal .images-content #close {
+  top: 3%;
+  left: 95%;
+  position: absolute;
+}
+
+footer {
+  background: #010C17;
+  padding: 70px 0 30px;
+}
+footer .footer__foot {
+  font-size: 16px;
+  text-align: center;
+  color: #bbbbbb;
+  padding-top: 90px;
+}
+footer #footer_main {
+  width: 90%;
+  margin: auto;
+}
+footer #footer_main .sitemap {
+  display: flex;
+  justify-content: space-between;
+}
+footer #footer_main .sitemap .aboutsite {
+  width: 20%;
+}
+footer #footer_main .sitemap .aboutsite .text-footer {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+}
+footer #footer_main .sitemap .aboutsite .text-footer p {
+  margin-top: 10px;
+}
+footer #footer_main .sitemap .aboutsite h3 {
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+}
+footer #footer_main .sitemap .aboutsite .social-links {
+  padding-top: 10px;
+}
+footer #footer_main .sitemap .aboutsite .social-links a, footer #footer_main .sitemap .aboutsite .social-links main section .all button, main section .all footer #footer_main .sitemap .aboutsite .social-links button {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 10px 0;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+footer #footer_main .sitemap .aboutsite .social-links a:hover, footer #footer_main .sitemap .aboutsite .social-links main section .all button:hover, main section .all footer #footer_main .sitemap .aboutsite .social-links button:hover {
+  color: #03396C;
+}
+footer #footer_main .sitemap .row {
+  width: 60%;
+}
+footer #footer_main .sitemap .row .footer-col {
+  width: 30%;
+  padding: 0 15px;
+}
+footer #footer_main .sitemap .row .footer-col h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+footer #footer_main .sitemap .row .footer-col ul {
+  padding-left: 0px !important;
+}
+footer #footer_main .sitemap .row .footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+footer #footer_main .sitemap .row .footer-col ul li a, footer #footer_main .sitemap .row .footer-col ul li main section .all button, main section .all footer #footer_main .sitemap .row .footer-col ul li button {
+  display: block;
+  font-weight: 300;
+  color: #bbbbbb;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+footer #footer_main .sitemap .row .footer-col ul li a:hover, footer #footer_main .sitemap .row .footer-col ul li main section .all button:hover, main section .all footer #footer_main .sitemap .row .footer-col ul li button:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+footer #footer_main .sitemap .row .footer-col .nw {
+  color: #bbbbbb;
+  transition: 0.2s all ease-in;
+}
+footer #footer_main .sitemap .row .footer-col .nw:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+@media (max-width: 574) {
+  footer {
+    display: grid;
+  }
+  footer .footer_main .sitemap {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  footer .footer_main .sitemap .row .footer-col {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#header-root {
+  height: 60vh;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+}
+#header-root .header-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header-root .header-title span {
+  color: #fff;
+  font-size: 60px;
+  font-family: "verdana", sans-serif;
+}
+#header-root .header-title .title {
+  width: 70%;
+  display: block;
+  font-size: 40px;
+}
+#header-root .header-title .title span a, #header-root .header-title .title span main section .all button, main section .all #header-root .header-title .title span button {
+  color: #03396C;
+  font-size: 45px;
+  font-weight: 800;
+}
+#header-root .header-title .title span a:hover, #header-root .header-title .title span main section .all button:hover, main section .all #header-root .header-title .title span button:hover {
+  text-decoration: underline !important;
+}
+
+#main-root {
+  width: 90%;
+  margin: auto;
+}
+#main-root .row {
+  margin: 30px 0 !important;
+}
+#main-root .row #sidebar-left .sidebar-news {
+  background-color: #fff;
+}
+#main-root .row #sidebar-left .sidebar-news h4 {
+  color: #010C17;
+  font-weight: 700;
+  margin: 20px 0 20px 0;
+}
+#main-root .row #sidebar-left .sidebar-news .news span:nth-child(1) {
+  font-weight: 700;
+}
+#main-root .row #sidebar-left .sidebar-news .news span a, #main-root .row #sidebar-left .sidebar-news .news span main section .all button, main section .all #main-root .row #sidebar-left .sidebar-news .news span button {
+  opacity: 0.7;
+  color: #010C17;
+}
+#main-root .row #sidebar-left .sidebar-news .news span a:hover, #main-root .row #sidebar-left .sidebar-news .news span main section .all button:hover, main section .all #main-root .row #sidebar-left .sidebar-news .news span button:hover {
+  text-decoration: underline !important;
+}
+#main-root .row #main-area {
+  padding: 0 0 0 30px;
+}
+#main-root .row #main-area .post .post-img img {
+  width: 100%;
+}
+#main-root .row #main-area .post .post-body h1 {
+  color: #010C17;
+  margin: 40px 0;
+  font-family: serif;
+  font-weight: 700;
+}
+#main-root .row #main-area .post .post-body .post p {
+  text-align: justify;
+}
+#main-root .row #main-area .post .add_time {
+  margin: 20px 0;
+  text-align: right;
+  border-bottom: 1px solid #010C17;
+}
+#main-root .row #main-area .post .add_time span {
+  font-weight: 700;
+}
+#main-root .row .news_cards {
+  margin-top: 30px;
+  transition: 1s all ease-in-out;
+}
+#main-root .row .news_cards .news-card {
+  height: 480px;
+  border: 2px solid #03396C;
+}
+#main-root .row .news_cards .news-card .news-img {
+  height: 30vh;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  transition: 1s all ease-in-out;
+}
+#main-root .row .news_cards .news-card .news-body {
+  padding: 20px;
+}
+#main-root .row .news_cards .news-card .news-body .news-title p {
+  font-weight: 650;
+  text-transform: capitalize;
+}
+#main-root .row .news_cards .news-card .news-body .news-descriptions p {
+  font-size: 17px;
+}
+#main-root .row .news_cards .news-card .news-body a, #main-root .row .news_cards .news-card .news-body main section .all button, main section .all #main-root .row .news_cards .news-card .news-body button {
+  color: #fff;
+  padding: 5px 30px;
+  background: #03396C;
+}
+
+#login_bg {
+  height: 100vh;
+  background-size: cover !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  background: linear-gradient(rgba(50, 50, 50, 0.52), rgba(50, 50, 50, 0.52)), url("../images/slide1.jpg");
+}
+#login_bg #login {
+  top: 40%;
+  left: 50%;
+  width: 30%;
+  height: 50%;
+  padding: 30px;
+  text-align: center;
+  position: absolute;
+  border: 1px solid #03396C;
+  transition: 1s all ease-in-out;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 0.7));
+}
+#login_bg #login h2 {
+  font-weight: 700;
+  color: #fff;
+}
+#login_bg #login form {
+  margin-top: 30px;
+}
+#login_bg #login form input, #login_bg #login #admin_main #action_bar #formpost form select, #admin_main #action_bar #formpost #login_bg #login form select {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  display: block;
+  background: none;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  transition: 1s all ease-in-out;
+  border-bottom: 2px solid #03396C;
+}
+#login_bg #login form input::-moz-placeholder, #login_bg #login #admin_main #action_bar #formpost form select::-moz-placeholder, #admin_main #action_bar #formpost #login_bg #login form select::-moz-placeholder {
+  opacity: 1;
+}
+#login_bg #login form input:-ms-input-placeholder, #login_bg #login #admin_main #action_bar #formpost form select:-ms-input-placeholder, #admin_main #action_bar #formpost #login_bg #login form select:-ms-input-placeholder {
+  opacity: 1;
+}
+#login_bg #login form input::placeholder, #login_bg #login #admin_main #action_bar #formpost form select::placeholder, #admin_main #action_bar #formpost #login_bg #login form select::placeholder {
+  opacity: 1;
+}
+#login_bg #login form input:focus::-moz-placeholder, #login_bg #login #admin_main #action_bar #formpost form select:focus::-moz-placeholder, #admin_main #action_bar #formpost #login_bg #login form select:focus::-moz-placeholder {
+  opacity: 0;
+}
+#login_bg #login form input:focus:-ms-input-placeholder, #login_bg #login #admin_main #action_bar #formpost form select:focus:-ms-input-placeholder, #admin_main #action_bar #formpost #login_bg #login form select:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+#login_bg #login form input:focus::placeholder, #login_bg #login #admin_main #action_bar #formpost form select:focus::placeholder, #admin_main #action_bar #formpost #login_bg #login form select:focus::placeholder {
+  opacity: 0;
+}
+#login_bg #login form .submit {
+  padding: 5px;
+  margin-top: 40px;
+  background: #03396C;
+}
+
+#admin_main {
+  display: flex;
+}
+#admin_main #control_bar {
+  flex: 25%;
+}
+#admin_main #action_bar {
+  flex: 65%;
+  height: 100vh;
+  margin-right: 5%;
+}
+#admin_main #action_bar #header {
+  margin: 15px 0 0 0;
+}
+#admin_main #action_bar #header hr {
+  border-width: 3px;
+}
+#admin_main #action_bar #header span {
+  font-weight: 700;
+  font-size: 30px;
+}
+#admin_main #action_bar #header a, #admin_main #action_bar #header main section .all button, main section .all #admin_main #action_bar #header button {
+  font-size: 20px;
+  padding: 5px 13px;
+  border: 1px solid #010C17;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#admin_main #action_bar #formpost {
+  height: 80vh;
+  overflow: scroll;
+}
+#admin_main #action_bar #formpost form input, #admin_main #action_bar #formpost form select {
+  width: 80%;
+  padding: 5px;
+  display: block;
+}
+#admin_main #action_bar #formpost form .add {
+  background-color: #555;
+}
+#admin_main #action_bar #formpost form #id_post_img {
+  display: none;
+}
+#admin_main #action_bar #formpost form .rasm {
+  width: 80%;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  transition: 0.4s all ease-in-out;
+  background-color: rgba(50, 50, 50, 0.3);
+  border: 1px solid #03396C;
+}
+#admin_main #action_bar #formpost form .rasm:hover {
+  color: #fff;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+#admin_main #action_bar #formpost form label, #admin_main #action_bar #formpost #fotoform form input, #admin_main #action_bar #fotoform #formpost form input, #admin_main #action_bar #fotoform #formpost form select, #admin_main #action_bar #formpost #fotoform form select {
+  margin-top: 20px;
+}
+#admin_main #action_bar #formpost .post-img {
+  top: 17%;
+  left: 83%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border: 1px solid #03396C;
+}
+#admin_main #action_bar #formpost .post-img img {
+  width: 100%;
+}
+#admin_main #action_bar #fotoform {
+  height: 80vh;
+  overflow: scroll;
+}
+#admin_main #action_bar #fotoform form label, #admin_main #action_bar #fotoform form input, #admin_main #action_bar #fotoform #formpost form select, #admin_main #action_bar #formpost #fotoform form select {
+  padding: 6px 15px;
+  border-radius: 5px;
+  margin-right: 30px;
+  border: 1px solid #03396C;
+  box-shadow: 3px 1px 5px #03396C;
+}
+#admin_main #action_bar #fotoform form input, #admin_main #action_bar #fotoform #formpost form select, #admin_main #action_bar #formpost #fotoform form select {
+  background: none;
+}
+#admin_main #action_bar #fotoform .live_demo {
+  width: 100%;
+  height: 600px;
+  margin-top: 30px;
+  border: none;
+}
+#admin_main #action_bar #table {
+  height: 70%;
+  overflow: scroll;
+}
+#admin_main #action_bar #table table thead {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}/*# sourceMappingURL=style.css.map */
