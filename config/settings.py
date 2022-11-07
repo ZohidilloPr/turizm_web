@@ -99,9 +99,9 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'turizm_db',
-#         'USER': 'turizmadmin',
-#         'PASSWORD': 'database_turizm',
+#         'NAME': 'turizm2022_db',
+#         'USER': 'admindata',
+#         'PASSWORD': 'database2022Turizm',
 #         'HOST': 'localhost',
 #         'PORT': '',
 #     }
@@ -141,8 +141,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_URL = '/home/zohidillo/turizm/static/'
+# STATIC_URL = 'static/'
 # STATIC_ROOT = '/home/zohidillo/turizm/static/'
+# STATICFILES_DIR = /home/zohidillo/turizm/static/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
