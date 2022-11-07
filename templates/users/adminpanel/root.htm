@@ -1,0 +1,111 @@
+{% extends "../../base.htm" %}
+{% block title %}
+    Admin Panel
+{% endblock title %}
+{% block content %}
+<div id="admin_main">
+    <div id="control_bar" class="" style="height: 100vh;">
+        <div class="flex-shrink-0 p-3 bg-dark h-100" style="width: 320px;">
+          <a class="link ms-1" href="{% url 'home' %}">https://turizm.toshvil.uz/uz/</a>
+            <a href="{% url 'users:postlist' %}" class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom">
+                <span class="fs-5 fw-semibold">Turizm Admin</span> <span class="fs-5 fw-semibold px-1"> | </span> 
+                <span class="fs-4 fw-semibold">{{ user | title }}</span>
+              </a>
+            <ul class="list-styled ps-0">
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                  Postlar
+                </button>
+                <div class="collapse ms-5" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    {% for n in navbaritems %}  
+                      <li><a href="{% url 'users:postfilterlist' slug=n.slug %}" class="link-light d-inline-flex text-decoration-none rounded">{{ n }}</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'users:postlist' %}" class="link-light d-inline-flex text-decoration-none rounded">Hammasi</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#areas-collapse" aria-expanded="false">
+                  Hududlar
+                </button>
+                <div class="collapse ms-5" id="areas-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                     
+                      <li><a href="{% url 'users:addarea' %}" class="link-light d-inline-flex text-decoration-none rounded">Yangi hudud</a></li>
+                      <li><a href="{% url 'users:bgareas' %}" class="link-light d-inline-flex text-decoration-none rounded">Fon rasm</a></li>
+                      <li><a href="{% url 'users:areaslist' %}" class="link-light d-inline-flex text-decoration-none rounded">Hammasi</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#news-collapse" aria-expanded="false">
+                  Yangiliklar
+                </button>
+                <div class="collapse ms-5" id="news-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                     
+                      <li><a href="{% url 'users:addnews' %}" class="link-light d-inline-flex text-decoration-none rounded">Yangi qo'shish</a></li>
+                      <li><a href="{% url 'users:bgnews' %}" class="link-light d-inline-flex text-decoration-none rounded">Fon rasm</a></li>
+                      <li><a href="{% url 'users:newslist' %}" class="link-light d-inline-flex text-decoration-none rounded">Hammasi</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#slider-collapse" aria-expanded="false">
+                  Header Slide
+                </button>
+                <div class="collapse ms-5" id="slider-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                     
+                      <li><a href="{% url 'users:addslider' %}" class="link-light d-inline-flex text-decoration-none rounded">Yangi qo'shish</a></li>
+                      <li><a href="{% url 'users:sliderlist' %}" class="link-light d-inline-flex text-decoration-none rounded">Hammasi</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-expanded="false">
+                  Boshqa
+                </button>
+                <div class="collapse ms-5" id="navbar-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                     
+                      <li><a href="{% url 'users:addnavbar' %}" class="link-light d-inline-flex text-decoration-none rounded">Yangi navbar qo'shish</a></li>
+                      <!-- <li><a href="{% url 'users:addphoto' %}" class="link-light d-inline-flex text-decoration-none rounded">Yangi rasm qo'shish</a></li> -->
+                      <li><a href="{% url 'users:addphotos' %}" class="link-light d-inline-flex text-decoration-none rounded">Albomga rasmlar qo'shish</a></li>
+                      <li><a href="{% url 'users:addwebname' %}" class="link-light d-inline-flex text-decoration-none rounded">Web sayt nomi</a></li>
+                      <li><a href="{% url 'users:bgmain' %}" class="link-light d-inline-flex text-decoration-none rounded">Orqa fon uchun rasm</a></li>
+                      <!-- <li><a href="{% url 'users:sliderlist' %}" class="link-light d-inline-flex text-decoration-none rounded">Hammasi</a></li> -->
+                  </ul>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex text-light align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                  Account
+                </button>
+                <div class="collapse ms-5" id="account-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <!-- <li><a href="#" class="link-light d-inline-flex text-decoration-none rounded">New...</a></li>
+                    <li><a href="#" class="link-light d-inline-flex text-decoration-none rounded">Profile</a></li>
+                    <li><a href="#" class="link-light d-inline-flex text-decoration-none rounded">Settings</a></li> -->
+                    <li><a href="{% url 'users:logout' %}" class="link-light d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="action_bar">
+      {% include "../../widgets/messages.htm" %}
+      <div id="header">
+          <span>{% block name %} 
+            
+          {% endblock name %}</span> {% block add_btn %}
+            
+          {% endblock add_btn %} 
+          <hr>
+      </div>
+      {% block list %}
+
+      {% endblock list %}
+    </div>
+</div>
+{% endblock content %}

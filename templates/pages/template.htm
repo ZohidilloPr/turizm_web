@@ -1,0 +1,74 @@
+{% extends '../base.htm' %}
+{% load static %}
+{% block title %}
+    
+{% endblock title %}
+{% block content %}
+    <!-- news section -->
+        {% include "../widgets/navbar.htm" %}
+    <!-- end section -->
+    <!-- start header -->
+        {% block header %}
+
+        {% endblock header %}
+    <!-- end header -->
+    <!-- start main -->
+        <div id="main-root">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 col-xxl-3" id="sidebar-left">
+                    <div class="sidebar-news">
+                        {% if '/en/' in request.path %}
+                            <h4>The latest news</h4>
+                            {% for n in news_left %}                          
+                                <div class="news">
+                                    <span>{{ n.add_time }}</span>
+                                    <br>
+                                    <span>
+                                        <a href="{% url 'en:newsdetail' slug=n.slug %}">{{ n.en_title }}</a>
+                                    </span>
+                                    <hr>
+                                </div>
+                            {% endfor %}
+                        {% elif '/ru/' in request.path %}                          
+                            <h4>Последние новости</h4>
+                            {% for n in news_left %}                          
+                                <div class="news">
+                                    <span>{{ n.add_time }}</span>
+                                    <br>
+                                    <span>
+                                        <a href="{% url 'ru:newsdetail' slug=n.slug %}">{{ n.ru_title }}</a>
+                                    </span>
+                                    <hr>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <h4>So'ngi yangiliklar</h4>
+                            {% for n in news_left %}                          
+                                <div class="news">
+                                    <span>{{ n.add_time }}</span>
+                                    <br>
+                                    <span>
+                                        <a href="{% url 'newsdetail' slug=n.slug %}">{{ n.uz_title }}</a>
+                                    </span>
+                                    <hr>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 col-xxl-9" id="main-area">
+                    {% block news %}
+                    
+                    {% endblock news %}
+                </div>
+            </div>
+        </div>
+    <!-- end main -->
+    <!-- start footer -->
+    {% if '/ru/' in request.path %}
+        {% include "../basesections/footer_ru.htm" %}    
+    {% else %}
+        {% include "../basesections/footer.htm" %}
+    {% endif %}
+    <!-- end footer -->
+{% endblock content %}

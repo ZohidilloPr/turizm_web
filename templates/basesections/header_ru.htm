@@ -1,0 +1,36 @@
+{% load static %}
+<header>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            {% for slider in header_slider %}
+                <div class="carousel-item" style="background: linear-gradient(rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.4)), url('{{ slider.post_img.url }}')">
+                    <div class="header-text">
+                        <div class="title">
+                            <h2>{{ slider.ru_title }}</h2>
+                            <p>{{ slider.ru_description }}</p>
+                            <a href="{% url 'ru:slideview' slug=slider.slug %}">Более</a>
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+        </div>
+    
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+</header>

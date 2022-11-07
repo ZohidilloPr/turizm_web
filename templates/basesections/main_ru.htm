@@ -1,0 +1,218 @@
+{% load static %}
+<main style="background:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('{{ bgfon.bg_img.url }}');">
+    <section id="news">
+        <h2>Новости</h2>
+        <div class="" id="news-row">
+            {% for n in news %}
+                <div class="news-colum">
+                    <div class="news-card" style="background-image: url('{{ n.post_img.url }}');">
+                        <!-- <div class="news-description"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas pariatur maiores aspernatur nobis consectetur minus odit molestias accusamus dolor?</span></div> -->
+                    </div>
+                    <div class="news-title">
+                        <span>{{ n.ru_title|truncatechars:50 }}</span> <br>
+                        <a href="{% url 'ru:newsdetail' slug=n.slug %}">Более</a>
+                    </div>
+                </div>  
+            {% empty %}
+                <div class="news-colum">
+                    <div class="news-card" style="background-image: url('../static/images/news.jpg');">
+                        <!-- <div class="news-description"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas pariatur maiores aspernatur nobis consectetur minus odit molestias accusamus dolor?</span></div> -->
+                    </div>
+                    <div class="news-title">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing.</span> <br>
+                        <a href="">Более</a>
+                    </div>
+                </div>
+                <div class="news-colum">
+                    <div class="news-card" style="background-image: url('../static/images/news.jpg');">
+                        <!-- <div class="news-description"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas pariatur maiores aspernatur nobis consectetur minus odit molestias accusamus dolor?</span></div> -->
+                    </div>
+                    <div class="news-title">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing.</span> <br>
+                        <a href="">Более</a>
+                    </div>
+                </div>
+                <div class="news-colum">
+                    <div class="news-card" style="background-image: url('../static/images/news.jpg');">
+                        <!-- <div class="news-description"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas pariatur maiores aspernatur nobis consectetur minus odit molestias accusamus dolor?</span></div> -->
+                    </div>
+                    <div class="news-title">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing.</span> <br>
+                        <a href="">Более</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="all">
+            <a href="{% url 'ru:newslist' %}">Все новости</a>
+        </div>
+    </section>
+    <section id="questions">
+        <h2>Savollar</h2>
+        <div id="poll">
+            <div class="poll-card">
+                <span class="num_ans">1-savol</span>
+                <hr>
+                <div class="poll-title">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, optio veritatis dolor delectus quibusdam labore?</span>
+                </div>
+                <div class="poll-answer">
+                    <form action="" method="post" id="question1" class="poll_question_form">
+                        <input type="radio" name="answer" id="answ1"> <label for="answ1"> Answer 1 </label><br>
+                        <input type="radio" name="answer" id="answ2"> <label for="answ2"> Answer 2 </label><br>
+                        <input type="radio" name="answer" id="answ3"> <label for="answ3"> Answer 3 </label><br>
+                        <input type="radio" name="answer" id="answ4"> <label for="answ4"> Answer 4 </label><br>
+                        <input type="submit" class="vote" value="vote">
+                    </form>
+                    <div id="answers1" class="poll_answers">
+                        <span>Answer "1" (12)</span>
+                        <span>Answer "2" (15)</span>
+                        <span>Answer "3" (17)</span>
+                        <span>Answer "4" (10)</span>
+                    </div>   
+                </div>
+            </div>
+            <div class="poll-card">
+                <span class="num_ans">1-savol</span>
+                <hr>
+                <div class="poll-title">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, optio veritatis dolor delectus quibusdam labore?</span>
+                </div>
+                <div class="poll-answer">
+                    <form action="" method="post" id="question2" class="poll_question_form">
+                        <input type="radio" name="answer" id="answ5"> <label for="answ5"> Answer 1 </label><br>
+                        <input type="radio" name="answer" id="answ6"> <label for="answ6"> Answer 2 </label><br>
+                        <input type="radio" name="answer" id="answ7"> <label for="answ7"> Answer 3 </label><br>
+                        <input type="radio" name="answer" id="answ8"> <label for="answ8"> Answer 4 </label><br>
+                        <input type="submit" class="vote" value="vote">
+                    </form>
+                    <div id="answers2" class="poll_answers">
+                        <span>Answer "1" (2)</span>
+                        <span>Answer "2" (25)</span>
+                        <span>Answer "3" (13)</span>
+                        <span>Answer "4" (19)</span>
+                    </div>   
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="all">
+            <a href="">Все yangiliklar</a>
+        </div> -->
+    </section>
+    <section id="video-galary">
+        <h2>Видео</h2>
+        <div class="albom">
+            {% for v in videos %}
+                <div class="video">
+                    <video controls poster="{{ v.foster.url }}">
+                        <source src="{{ v.video.url }}" type="video/mp4">
+                        Sizning browseringiz videoni ocha olmayapti iltimos boshqa browser orqali tekshirib ko'ring!
+                    </video>
+                </div>
+            {% empty %}
+                <h1>Hozirda video lavhalar mavjud emas</h1>
+            {% endfor %}
+        </div>
+        <!-- <div class="all">
+            <a href="">Все видео</a>
+        </div> -->
+    </section>
+    <section id="hududlar">
+        <h2>Регионы</h2>
+        <div id="areas">
+            {% for a in arealist %}              
+                <div class="area-colum">
+                    <div class="area-card" style="background: linear-gradient(rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2)), url('{{ a.post_img.url }}');"></div>
+                    <div class="area-title">
+                        <span><a href="">{{ a.ru_title }}</a></span>
+                        <p>{{ a.ru_description }}</p>
+                    </div>
+                    <a href="{% url 'ru:areadetail' slug=a.slug %}" class="more_read">Более</a>
+                </div>
+            {% empty %}
+                <div class="area-colum">
+                    <div class="area-card" style="background: linear-gradient(rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2)), url('../static/images/hududlar/Olmaliq.JPG');"></div>
+                    <div class="area-title">
+                        <span><a href="">Olmaliq shaxar</a></span>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, unde!</p>
+                    </div>
+                    <a href="" class="more_read" >Более</a>
+                </div>
+                <div class="area-colum">
+                    <div class="area-card" style="background: linear-gradient(rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2)), url('../static/images/hududlar/ohangaron.jpeg');"></div>
+                    <div class="area-title">
+                        <span><a href="">Ohangaron shaxar</a></span>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, unde!</p>
+                    </div>
+                    <a href="" class="more_read" >Более</a>
+                </div>
+                <div class="area-colum">
+                    <div class="area-card" style="background: linear-gradient(rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2)), url('../static/images/hududlar/chirchiq.jpg');"></div>
+                    <div class="area-title">
+                        <span><a href="">Chirchiq shaxar</a></span>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, unde!</p>
+                    </div>
+                    <a href="" class="more_read" >Более</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="all">
+            <a href="{% url 'ru:areaslist' %}">Все Регионы</a>
+        </div>
+    </section>
+    <section id="photo-galary">
+        <h2>Фото</h2>
+        <div class="images-grid">
+            <ul>
+                {% for p in photos %}
+                    <li>
+                        <img src="{{ p.photos.url }}" alt="hello">
+                        <div class="overlay-text-image"><span>Photo Arxiv</span></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="images-modal">
+            <div class="images-content">
+                <div class="fotorama" data-loop="true" data-autoplay="true" data-autoplay="500" data-nav="thumbs" data-width="100%"  data-ratio="800/600" data-minwidth="400" data-maxwidth="1000" data-minheight="200" data-maxheight="100%">
+                    {% for s in slideshow %}    
+                        <img src="{{ s.photos.url }}" alt="">
+                    {% endfor %}
+                </div>
+                <div id="close">
+                    <div class="btn-close btn-close-white" id="close-slideshow" aria-label="Close"></div>
+                </div>
+            </div>
+        </div>
+        <div class="all">
+            <button id="slideshow-btn">Slideshow</button>
+            <a href="{% url 'ru:photoslist' %}">Все Фото</a>
+        </div>
+    </section>
+    <section id="places" style="display: none;">
+        <h2>Достопримечательности</h2>
+        <div id="places_card">
+            {% for obj in shrines %}  
+                <div class="places-collum">
+                    <div class="places-card" style="background: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url('{{ obj.post_img.url }}');"></div>
+                    <div class="places-title">
+                        <span><a href="">{{ obj.ru_title }}</a></span>
+                        <p>{{ obj.ru_description }}</p>
+                    </div>
+                    <a href="{% url 'postview' slug=obj.slug %}" class="more_read">Более</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="all">
+            <a href="">Все</a>
+        </div>
+    </section>
+    <section id="menu-places">
+        <div id="menu-box">
+            {% for ru in navbaritems %}  
+                <div class="box" style="background-image: url('{{ ru.navbar_img.url }}');"><span><a href="{% url 'ru:poststype' slug=ru.slug %}">{{ ru.ru_name }}</a></span></div>
+            {% endfor %}
+        </div>
+    </section>
+</main>

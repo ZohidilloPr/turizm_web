@@ -1,0 +1,33 @@
+{% extends '../base.htm' %}
+{% load static %}
+{% block title %}
+    
+{% endblock title %}
+
+{% block content %}
+    <!-- start navbar -->
+        {% include "../widgets/navbar.htm" %}
+    <!-- end navbar -->
+    <!-- start header  -->
+        {% block header %}
+
+        {% endblock header %}
+    <!-- end header  -->
+    <!-- start main -->
+        <div id="main-root">
+            <div class="row">
+                {% block cards %}
+                  
+                {% endblock cards %}
+            </div>
+        </div>
+    <!-- end main -->
+    <!-- start footer -->
+    {% if '/ru/' in request.path %}
+        {% include "../basesections/footer_ru.htm" %}    
+    {% else %}
+        {% include "../basesections/footer.htm" %}
+    {% endif %}
+    <!-- end footer -->
+{% endblock content %}
+        

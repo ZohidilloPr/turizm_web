@@ -1,0 +1,92 @@
+{% extends '../pages/templateall.htm' %}
+
+{% block title %}
+    {{ object }}
+{% endblock title %}
+
+{% block header %}
+    <div id="header-root" style="background: linear-gradient(rgba(30, 30, 30, 0.4), rgba(30, 30, 30, 0.4)), url('{{ object.navbar_img.url }}');">
+        <div class="header-title">
+            <span>
+                {% if '/en/' in request.path %}
+                    {{ object.en_name }}
+                {% elif '/ru/' in request.path %} 
+                    {{ object.ru_name }}
+                {% else %}
+                    {{ object.uz_name }}
+                {% endif %}
+            </span>
+        </div>
+    </div>  
+{% endblock header %}
+
+{% block cards %}
+    {% for l in object_list %}
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4 news_cards">
+            <div class="news-card">
+                <div class="news-img" style="background-image: url('{{ l.post_img.url }}');"></div>
+                <div class="news-body">
+                    {% if '/en/' in request.path %}
+                        <div class="news-title">
+                            <p>{{ l.en_title|truncatechars:50 }}</p>
+                        </div>
+                        <div class="news-descriptions">
+                            <p>{{ l.en_description|truncatechars:80 }}</p>
+                        </div>
+                        <a href="{% url 'en:postview' slug=l.slug %}">More Read</a>
+                    {% elif '/ru/' in request.path %}  
+                        <div class="news-title">
+                            <p>{{ l.ru_title|truncatechars:50 }}</p>
+                        </div>
+                        <div class="news-descriptions">
+                            <p>{{ l.ru_description|truncatechars:80 }}</p>
+                        </div>
+                        <a href="{% url 'ru:postview' slug=l.slug %}">Более</a>
+                    {% else %}
+                        <div class="news-title">
+                            <p>{{ l.uz_title|truncatechars:50 }}</p>
+                        </div>
+                        <div class="news-descriptions">
+                            <p>{{ l.uz_description|truncatechars:80 }}</p>
+                        </div>
+                        <a href="{% url 'postview' slug=l.slug %}">Batafsil</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <h1 class="my-5">Afsus hozircha malumotlar yoq!</h1>
+    {% endfor %}
+    <div aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if is_paginated %}
+                {% if page_obj.has_previous  %}                    
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ movies.previous_page_number }}">Ortga</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">Ortga</a>
+                    </li>
+                {% endif %}
+                {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}    
+                        <li class="page-item active"><a class="page-link" href="">{{ i }}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}                    
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ movies.next_page_number }}">Keyingisi</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">Keyingisi</a>
+                    </li>
+                {% endif %}       
+            {% endif %}
+        </ul>
+    </div>
+{% endblock cards %}
+    

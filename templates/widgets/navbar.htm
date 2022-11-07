@@ -1,0 +1,176 @@
+{% load static %}
+
+{% if '/ru/' in request.path %}
+    <nav class="nav-head">
+        <div class="marquee"><span>Veb sayt test rejimida ishlamoqda!</span></div>
+        <div class="nav-in">
+            <div class="brand">
+                <a href="/"><img src="{{ web_name.logo.url }}" width="70" alt=""></a>
+                <span><a href="/">{{ web_name.ru_name | title }}</a></span>
+            </div>
+            <div class="lang">
+                <a id="lang_uz" href="" >Uz</a> |
+                <a id="lang_ru" href="" class="a-hover">Ru</a> |
+                <a id="lang_en" href="">En</a>
+            </div>
+            <div class="navigate">
+                <ul>
+                    <li>
+                        <a href="" id="hudud">{{ nav0.ru_name | title }}</a>
+                        <ol id="area">
+                            {% for uz in arealist %}
+                                <li><a href="{% url 'ru:areadetail' slug=uz.slug %}">{{ uz.ru_title | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{% url 'ru:newslist' %}">{{ nav1.ru_name | title }}</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#" id="space">{{ nav2.ru_name | title }}</a>
+                        <ol id="spaces">
+                            {% for uz in navbaritems %}
+                                <li><a href="{% url 'ru:poststype' slug=uz.slug %}">{{ uz.ru_name | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>   
+                </ul>
+
+            </div>
+            <div class="contact">
+                <span id="phone-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                </span>
+                <span id="phone-number">(0367) <b>1695125</b> </span>
+            </div>
+        </div>
+    </nav>  
+{% elif '/en/' in request.path %}
+    <nav class="nav-head">
+        <div class="marquee"><span>Veb sayt test rejimida ishlamoqda!</span></div>
+        <div class="nav-in">
+            <div class="brand">
+                <a href="/"><img src="{{ web_name.logo.url }}" width="70" alt=""></a>
+                <span><a href="/">{{ web_name.en_name | title }}</a></span>
+            </div>
+            <div class="lang">
+                <a id="lang_uz" href="" >Uz</a> |
+                <a id="lang_ru" href="">Ru</a> |
+                <a id="lang_en" href="" class="a-hover">En</a>
+            </div>
+            <div class="navigate">
+                <ul>
+                    <li>
+                        <a href="" id="hudud">{{ nav0.en_name | title }}</a>
+                        <ol id="area">
+                            {% for uz in arealist %}
+                                <li><a href="{% url 'en:areadetail' slug=uz.slug %}">{{ en.ru_title | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{% url 'en:newslist' %}">{{ nav1.en_name | title }}</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#" id="space">{{ nav2.en_name | title }}</a>
+                        <ol id="spaces">
+                            {% for uz in navbaritems %}
+                                <li><a href="{% url 'en:poststype' slug=uz.slug %}">{{ uz.en_name | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>   
+                </ul>
+
+            </div>
+            <div class="contact">
+                <span id="phone-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                </span>
+                <span id="phone-number">(0367) <b>1695125</b> </span>
+            </div>
+        </div>
+    </nav>  
+{% else %}
+    <nav class="nav-head">
+        <div class="marquee"><span>Veb sayt test rejimida ishlamoqda!</span></div>
+        <div class="nav-in">
+            <div class="brand">
+                <a href="/"><img src="{{ web_name.logo.url }}" width="70" alt=""></a>
+                <span><a href="/">{{ web_name.uz_name | title }}</a></span>
+            </div>
+            <div class="lang">
+                <a id="lang_uz" href="" class="a-hover">Uz</a> |
+                <a id="lang_ru" href="">Ru</a> |
+                <a id="lang_en" href="">En</a>
+            </div>
+            <div class="navigate">
+                <ul>
+                    <li>
+                        <a href="" id="hudud">{{ nav0.uz_name | title }}</a>
+                        <ol id="area">
+                            {% for uz in arealist %}
+                                <li><a href="{% url 'areadetail' slug=uz.slug %}">{{ uz.uz_title | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{% url 'newslist' %}">{{ nav1.uz_name | title }}</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#" id="space">{{ nav2.uz_name | title }}</a>
+                        <ol id="spaces">
+                            {% for uz in navbaritems %}
+                                <li><a href="{% url 'poststype' slug=uz.slug %}">{{ uz.uz_name | title }}</a></li>
+                            {% endfor %}
+                        </ol>
+                    </li>   
+                </ul>
+
+            </div>
+            <div class="contact">
+                <span id="phone-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                </span>
+                <span id="phone-number">(0367) <b>1695125</b> </span>
+            </div>
+        </div>
+    </nav>
+{% endif %}
+<!-- {{ request.path }} -->
+<!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+At aspernatur tempore facilis architecto ratione aperiam vitae nulla inventore veniam cupiditate 
+rem nostrum dicta illo atque soluta maiores qui corporis fugit veritatis quo, omnis magnam animi accusantium.
+Amet facilis assumenda tempore eum eveniet beatae aliquid praesentium quisquam temporibus. Itaque, mollitia atque. -->
+    <!-- <div class="directors directors-slider owl-carousel owl-theme">
+        <div class="director-item">
+            <div class="director-item__title">Viloyat hokimining matbuot kotibi</div>
+            <p>
+                <b>Qobulov Behzod O‘rmonjonovich</b> <br>
+                Telefon: 71-232-80-67,
+                E-mail: b.kabulov@toshvil.uz,
+            </p>
+            <div class="d-flex justify-content-between mb-4">
+                <a class="btn btn-o" href=""></a>
+                <a class="btn btn-o" href=""></a>
+            </div>
+            <img width="300" src="images/b.jpg">
+        </div>  
+    </div> -->

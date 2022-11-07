@@ -1,0 +1,33 @@
+{% extends 'base.htm' %}
+{% block title %}
+    Bosh sahifa
+{% endblock title %}
+{% block content %}
+    <!-- start nav -->
+        {% include "widgets/navbar.htm" %}
+    <!-- end nav -->
+    <!-- start header -->
+        {% if '/ru/' in request.path %}     
+            {% include "basesections/header_ru.htm" %}
+        {% else %}        
+            {% include "basesections/header.htm" %}
+        {% endif %}
+    <!-- end header -->
+    <!-- start main -->
+        {% if '/ru/' in request.path %}  
+            {% include "basesections/main_ru.htm" %}
+        {% else %}
+            {% include "basesections/main.htm" %}
+        {% endif %}
+    <!-- end main -->
+    <!-- start footer -->
+        {% if '/ru/' in request.path %}
+            {% include "basesections/footer_ru.htm" %}    
+        {% else %}
+            {% include "basesections/footer.htm" %}
+        {% endif %}
+            
+    <!-- end footer -->
+{% endblock content %}
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ratione quae iusto voluptatibus temporibus repellendus! Quae dolorem a nulla sapiente vero dolores dicta velit ea mollitia impedit suscipit, hic dolorum!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, dignissimos optio eveniet assumenda debitis delectus est dolore, ipsa doloremque, eaque hic quaerat autem. Ipsam sequi sapiente quia magnam non nisi, similique esse possimus? Atque, eos dolor illo nesciunt placeat est voluptatibus nobis fuga perspiciatis inventore aliquid dignissimos totam consequuntur animi, culpa eaque minima, doloribus et? Ipsam harum neque molestias officia. Nihil iusto dolore, earum fugiat facere necessitatibus vitae quae ex sapiente molestiae eveniet nostrum ut vero, accusantium eaque minima asperiores. Sequi natus corrupti doloribus vero, itaque ut repudiandae numquam consectetur sint est aut architecto repellendus, sunt, debitis assumenda velit fuga!

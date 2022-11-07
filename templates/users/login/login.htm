@@ -1,0 +1,26 @@
+{% extends "../../base.htm" %}
+{% block title %}
+    Login
+{% endblock title %}
+{% block content %}
+    <div id="login_bg">
+        <div id="login">
+            <h2>Xush kelibsiz</h2>
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+                {{ form.username }}
+                {{ form.password }}
+                <input class="submit" type="submit" value="kirish">
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#id_username').attr('placeholder', 'Username');
+            $('#id_password').attr('placeholder', 'Password');
+            $('#login').slideDown(7000)
+            $('.to-top').hide()
+        })
+    </script>
+{% endblock content %}

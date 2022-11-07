@@ -1,0 +1,75 @@
+{% extends '../../root.htm' %}
+{% load static %}
+{% block title %}
+    List
+{% endblock title %}
+{% block name %}
+    Yangi Post
+{% endblock name %}
+{% block list %}
+    <div id="formpost">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {% if form.navbar %}  
+                <label for="id_navbar">Bo'lim nomi</label> 
+                {{ form.navbar }}
+            {% else %}
+                <label for="id_navbaritem">Bo'lim nomi</label> 
+                {{ form.navbaritem }}
+            {% endif %}
+            <label for="id_post_img" class="rasm">Post uchun rasm</label>
+            {{ form.post_img }}
+            <label for="id_uz_title">Sarlavha (uzbek tilida)</label> 
+            {{ form.uz_title }}
+            <label for="id_ru_title">Sarlavha (rus tilida)</label> 
+            {{ form.ru_title }}
+            <label for="id_en_title">Sarlavha (ingiliz tilida)</label> 
+            {{ form.en_title }}
+            <label for="id_slug">Slug</label> 
+            {{ form.slug }}
+            <label for="id_uz_description">Qisqacha mazmun (uzbek tilida)</label>
+            {{ form.uz_description }}
+            <label for="id_ru_description">Qisqacha mazmun (rus tilida)</label>
+            {{ form.ru_description }}
+            <label for="id_en_description">Qisqacha mazmun (ingiliz tilida)</label>
+            {{ form.en_description }}
+            <label for="id_uz_post">Post (uzbek tilida)</label>
+            {{ form.uz_post }}
+            <label for="id_ru_post">Post (rus tilida)</label>
+            {{ form.ru_post }}
+            <label for="id_en_post">Post (ingiliz tilida)</label>
+            {{ form.en_post }}
+            <input type="submit" value="Add" class="btn btn-dark mt-3">
+        </form>
+        <div class="post-img">
+            <img src="" alt="" id="upload_img">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function LiveImg() {            
+            let img = document.querySelector('img')
+            let file = document.querySelector('input[type=file]').files[0];
+            const reader = new FileReader();
+    
+            reader.addEventListener('load', () => {
+                img.src = reader.result;
+            }, false)
+            if (file){
+                reader.readAsDataURL(file);
+            }
+        }
+        $(document).ready(function(){
+            $('#id_post_img').attr('onchange', "LiveImg()");
+        })
+        const input = document.getElementById("id_uz_title");
+        const log = document.getElementById('id_slug');
+
+        input.addEventListener('input', updateValue);
+
+        function updateValue(e) {
+            log.value = e.target.value.split(' ').join('-');
+        }
+    </script>
+{% endblock list %}

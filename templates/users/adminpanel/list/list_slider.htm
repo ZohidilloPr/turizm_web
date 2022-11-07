@@ -1,0 +1,54 @@
+{% extends '../root.htm' %}
+{% block title %}
+    List
+{% endblock title %}
+{% block name %}
+    Header slider
+{% endblock name %}
+{% block add_btn %}
+    <a class="bg-dark link-light" href="{% url 'users:addslider' %}">Yangi Post</a>
+{% endblock add_btn %}
+{% block list %}
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Vaqt</th>
+                <th scope="col">Taxrirlash</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in object_list %}
+                <tr>
+                    <th>{{ obj.id }}</th>
+                    <td>{{ obj.uz_title }}</td>
+                    <td>{{ obj.add_time }}</td>
+                    <td>
+                        <a href="{% url 'users:updateslider' pk=obj.pk %}">Edit</a> | <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ obj.id }}">Delete</a>
+                    </td>
+                </tr>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop{{ obj.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ obj.uz_title }}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{ obj.uz_description }}
+                        </div>
+                        <div class="modal-footer">
+                            <form action="{% url 'users:deletepost' slug=obj.slug %}" method="post">{% csrf_token %}
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>    
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock list %}
